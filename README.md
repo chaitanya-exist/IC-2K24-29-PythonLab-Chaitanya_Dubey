@@ -1,4 +1,4 @@
-# RollNo-PythonLab-YourName
+# IC-2K24-29-PythonLab-Chaitanya_Dubey
 
 Python lab work for Semester 5(a). Each session's work lives in its own folder.
 
