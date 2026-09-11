@@ -1,4 +1,4 @@
-Akshat Jain Ic-2k24-10
+
 # Python Star Patterns
 
 A small collection of beginner-friendly Python programs that print star (`*`) patterns in the terminal. Each program asks for the number of rows, then displays its pattern.
