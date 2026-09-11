@@ -1,0 +1,90 @@
+Activity: Find the Time and Space Complexity
+For each snippet, write the time complexity and space complexity using Big-O notation, and justify your answer in one line.
+
+Snippet 1
+Time complexity: O(N) Space complexity: O(1)
+Justify: we loop thru the array one time and just keep one varible for max
+
+Snippet 2
+Time complexity: O(N^2) Space complexity: O(1)
+Justify: nested loops over the same arr, no extra memory used
+
+Snippet 3
+Time complexity: O(log n) Space complexity: O(log n)
+Justify: diving by 10 each time so its log base 10 of n, and space is same for recursion stack
+
+Snippet 4
+Time complexity: O(N^2) Space complexity: O(N^2)
+Justify: double loop makes N^2 pairs and we store all of them in a new list
+
+Snippet 5
+Time complexity: O(log N) Space complexity: O(1)
+Justify: standard bin search cuts space in half each time, done iterativly so no extra space
+
+Snippet 6
+Time complexity: O(N^3) Space complexity: O(N^2)
+Justify: 3 nested loops from 0 to n for time, and space is just storing the n*n matrix
+
+Snippet 7
+Time complexity (in terms of matrix dimensions m and n): O(m*n) Space complexity (in terms of k non-zero elements): O(k)
+Justify: we have to check every cell which is m*n, but only store the k ones that arent zero
+
+Snippet 8
+Time complexity: O(N^2)
+Justify: first loop is O(N) and second is O(N^2), we drop the smaller term so O(N^2) overall
+
+Snippet 9
+Time complexity: O(N)
+Justify: the inner loop is always exactly 10 iterations so its O(10*N) which simplifies to O(N)
+
+Snippet 10
+Time complexity: O(N) Space complexity: O(N)
+Justify: looping backwards once, and storing it all in a brand new array
+
+Snippet 11
+Time complexity: O(N) Space complexity: O(1)
+Justify: only loops through half the array to swap, and does it all in place
+
+Snippet 12
+Time complexity: O(N) Space complexity: O(N)
+Justify: recursing n times means n function calls on the call stack
+
+Snippet 13
+Time complexity: O(2^N) Space complexity: O(N)
+Justify: each call branches twice, but the max depth of the recursion tree is just N
+
+Snippet 14
+Time complexity: O(N) Space complexity: O(N)
+Justify: checking a set is O(1) so we do it n times, and the set can hold up to n items
+
+Snippet 15
+Time complexity: O(N * 2^N)
+Justify: outer loop runs 2^n times for all subsets and inner loop runs N times for the bits
+
+Snippet 16
+Time complexity: O(N+M) Space complexity: O(N+M)
+Justify: have to go thru both lists of sizes n and m, and result array holds all elements
+
+Snippet 17
+Time complexity: O(N) Space complexity: O(N)
+Justify: python string slicing makes a whole new copy of the string in memory
+
+Snippet 18
+Time complexity (in terms of m rows and n columns): O(m*n) Space complexity: O(m*n)
+Justify: iterates over every single element in the 2d array and puts them in a 1d list
+
+Snippet 19
+Time complexity: O(exp) Space complexity: O(exp)
+Justify: calls itself exp times so time and stack space grow linearly with exp
+
+Snippet 20
+Time complexity: O(log(exp)) Space complexity: O(log(exp))
+Justify: cuts the exponent in half every step so it reaches 0 super fast
+
+Snippet 21
+Time complexity (in terms of the sizes of a and b): O(A*B) Space complexity: O(1)
+Justify: for every element in list a we loop thru all of list b. no extra data structs
+
+Snippet 22
+Time complexity: O(N) Space complexity: O(N)
+Justify: looping over the array once, hash map might store up to N diff keys
