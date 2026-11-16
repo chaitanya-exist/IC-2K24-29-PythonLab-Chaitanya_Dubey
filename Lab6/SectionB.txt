@@ -1,0 +1,76 @@
+# Lab 6 — Section B: Dictionary Output Tracing
+
+## 1. Assignment / aliasing
+```python
+first = {"score": 10}
+second = first
+second["score"] = 25
+print(first["score"])
+```
+Output: `25`
+Explanation: both names refer to the same dictionary object.
+
+## 2. Shallow copy
+```python
+original = {"items": ["pen"]}
+clone = original.copy()
+clone["items"].append("book")
+print(original)
+```
+Output: `{'items': ['pen', 'book']}`
+Explanation: the outer dictionary is copied, but the nested list is shared.
+
+## 3. Dictionary comprehension and truthy values
+```python
+letters = ["a", "b", "c"]
+values = [0, 1, 2]
+result = {letter: value for letter, value in zip(letters, values) if value}
+print(result)
+```
+Output: `{'b': 1, 'c': 2}`
+Explanation: zero is falsy, so the first pair is filtered out.
+
+## 4. setdefault()
+```python
+scores = {"A": 8}
+print(scores.setdefault("A", 0), scores.setdefault("B", 5), scores)
+```
+Output: `8 5 {'A': 8, 'B': 5}`
+Explanation: an existing key keeps its value; a missing key is inserted with the default.
+
+## 5. Equal keys and hashing
+```python
+values = {1: "integer", 1.0: "float", True: "boolean"}
+print(values, len(values))
+```
+Output: `{1: 'boolean'} 1`
+Explanation: `1`, `1.0` and `True` compare equal and have the same hash, so they address the same dictionary entry.
+
+## 6. Changing dictionary size while iterating
+```python
+items = {"a": 1, "b": 2}
+for key in items:
+    if key == "a":
+        del items[key]
+```
+Result: `RuntimeError: dictionary changed size during iteration`
+Explanation: do not add or delete keys during direct iteration over the same dictionary. Iterate over `list(items)` or build a new dictionary instead.
+
+## 7. pop() and popitem()
+```python
+items = {"a": 1, "b": 2}
+missing = items.pop("x", None)
+last = items.popitem()
+print(missing, last)
+```
+Output: `None ('b', 2)`
+Explanation: `pop` returns the provided default for a missing key; `popitem` removes and returns the most recently inserted pair.
+
+## 8. Inverting values that are not unique
+```python
+source = {"first": 7, "second": 7}
+inverted = {value: key for key, value in source.items()}
+print(inverted)
+```
+Output: `{7: 'second'}`
+Explanation: both original keys map to the same new key; the later assignment replaces the earlier value.
